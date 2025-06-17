@@ -1,8 +1,9 @@
 const express = require('express');
+require('dotenv').config();
 
 const app = express();
 
-app.use('/public', express.static('public'));
+app.use(express.static('public'));
 
 app.get('/health', (req, res) => {
  return res.status(200).json({
